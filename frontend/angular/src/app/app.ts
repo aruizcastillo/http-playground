@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { MessageService } from './message.service'
+import { MessageService } from './services/message.service'
 
 @Component({
   selector: 'app-root',
