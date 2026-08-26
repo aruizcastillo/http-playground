@@ -1,11 +1,28 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { MessageService } from './message.service'
 
 @Component({
-  imports: [],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [FormsModule],
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('angular');
+  private readonly messageService = inject(MessageService)
+
+  getResponse = ''
+  postMessage = ''
+  postResponse = ''
+
+  handleGet() {
+    this.messageService.fetchMessage().subscribe((data) => {
+      this.getResponse = data.message
+    })
+  }
+
+  handlePost() {
+    this.messageService.sendMessage(this.postMessage).subscribe((data) => {
+      this.postResponse = data.received
+    })
+  }
 }
