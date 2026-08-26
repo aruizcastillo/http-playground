@@ -1,10 +1,10 @@
 # Dependencies
 node_modules/
 
-# Environment files
-.env
-.env.*
-!.env.example
+# Environment files are intentionally tracked.
+# They only contain local development configuration and no secrets.
+# .env
+
 
 # Frontend builds
 dist/
