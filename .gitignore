@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Frontend builds
+dist/
+build/
+.vite/
+.angular/
+coverage/
+
+# Go binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go test / profiling files
+*.test
+*.out
+coverage.out
+*.prof
+
+# Logs
+*.log
+logs/
+
+# pnpm
+.pnpm-store/
+
+# IDE / editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
