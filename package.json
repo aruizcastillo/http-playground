@@ -1,0 +1,12 @@
+{
+  "name": "http-playground",
+  "private": true,
+  "scripts": {
+    "dev:vue": "pnpm --filter ./frontend/vue dev",
+    "dev:angular": "pnpm --filter ./frontend/angular start",
+    "dev:express": "pnpm --filter ./backend/node-express dev",
+    "dev:go-nethttp": "go run ./backend/go-nethttp",
+    "dev:go-gin": "go run ./backend/go-gin",
+    "dev:go-fiber": "go run ./backend/go-fiber"
+  }
+}
