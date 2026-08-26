@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 
@@ -53,7 +54,7 @@ func main() {
 		}
 
 		c.JSON(http.StatusOK, gin.H{
-			"received": body.Message,
+			"message": fmt.Sprintf("Message received by GO GIN backend: %q", body.Message),
 		})
 	})
 

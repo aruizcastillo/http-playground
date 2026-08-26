@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/gofiber/fiber/v3"
@@ -48,7 +49,7 @@ func main() {
 		}
 
 		return c.JSON(fiber.Map{
-			"received": body.Message,
+			"message": fmt.Sprintf("Message received by GO FIBER backend: %q", body.Message),
 		})
 	})
 

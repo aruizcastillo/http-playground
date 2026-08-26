@@ -16,7 +16,7 @@ export class MessageService {
   }
 
   sendMessage(message: string) {
-    return this.http.post<{ received: string }>(
+    return this.http.post<{ message: string }>(
       `${this.apiUrl}/api/message`,
       { message },
     )

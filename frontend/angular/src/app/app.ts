@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core'
+import { Component, inject, signal } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { MessageService } from './services/message.service'
 
@@ -10,19 +10,23 @@ import { MessageService } from './services/message.service'
 export class App {
   private readonly messageService = inject(MessageService)
 
-  getResponse = ''
-  postMessage = ''
-  postResponse = ''
+  readonly getResponse = signal('')
+  readonly postMessage = signal('Hello from ANGULAR frontend')
+  readonly postRequest = signal('')
+  readonly postResponse = signal('')
 
   handleGet() {
     this.messageService.fetchMessage().subscribe((data) => {
-      this.getResponse = data.message
+      this.getResponse.set(data.message)
     })
   }
 
   handlePost() {
-    this.messageService.sendMessage(this.postMessage).subscribe((data) => {
-      this.postResponse = data.received
+    const message = this.postMessage()
+    this.postRequest.set(message)
+
+    this.messageService.sendMessage(message).subscribe((data) => {
+      this.postResponse.set(data.message)
     })
   }
 }

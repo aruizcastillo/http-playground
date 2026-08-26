@@ -8,14 +8,15 @@
       GET with HttpClient
     </button>
 
-    <p>Response: {{ getResponse }}</p>
+    <p>Response: {{ getResponse() }}</p>
   </section>
 
   <section>
     <h2>POST /api/message</h2>
 
     <input
-      [(ngModel)]="postMessage"
+      [ngModel]="postMessage()"
+      (ngModelChange)="postMessage.set($event)"
       type="text"
       placeholder="Write a message"
     />
@@ -24,6 +25,7 @@
       POST with HttpClient
     </button>
 
-    <p>Response: {{ postResponse }}</p>
+    <p>Request: {{ postRequest() }}</p>
+    <p>Response: {{ postResponse() }}</p>
   </section>
 </main>

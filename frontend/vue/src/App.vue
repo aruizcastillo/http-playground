@@ -12,6 +12,7 @@ import {
 
 const getResponse = ref('')
 const postMessage = ref('Hello from VUE frontend')
+const postRequest = ref('')
 const postResponse = ref('')
 
 const handleFetchGet = async () => {
@@ -28,16 +29,22 @@ const handleAxiosGet = async () => {
 }
 
 const handleFetchPost = async () => {
-  const response = await sendMessageWithFetch(postMessage.value)
+  const message = postMessage.value
+  postRequest.value = message
+
+  const response = await sendMessageWithFetch(message)
   const data = await response.json()
 
-  postResponse.value = `FETCH: ${data.received}`
+  postResponse.value = data.message
 }
 
 const handleAxiosPost = async () => {
-  const response = await sendMessageWithAxios(postMessage.value)
+  const message = postMessage.value
+  postRequest.value = message
 
-  postResponse.value = `AXIOS: ${response.data.received}`
+  const response = await sendMessageWithAxios(message)
+
+  postResponse.value = response.data.message
 }
 </script>
 
@@ -76,6 +83,7 @@ const handleAxiosPost = async () => {
         POST with Axios
       </button>
 
+      <p>Request: {{ postRequest }}</p>
       <p>Response: {{ postResponse }}</p>
     </section>
   </main>

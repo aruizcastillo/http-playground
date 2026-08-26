@@ -5,8 +5,8 @@
     "dev:vue": "pnpm --filter ./frontend/vue dev",
     "dev:angular": "pnpm --filter ./frontend/angular start",
     "dev:express": "pnpm --filter ./backend/node-express dev",
-    "dev:go-nethttp": "go run ./backend/go-nethttp",
-    "dev:go-gin": "go run ./backend/go-gin",
-    "dev:go-fiber": "go run ./backend/go-fiber"
+    "dev:go-fiber": "cd backend/go-fiber && go run .",
+    "dev:go-gin": "cd backend/go-gin && go run .",
+    "dev:go-nethttp": "cd backend/go-nethttp && go run ."
   }
 }

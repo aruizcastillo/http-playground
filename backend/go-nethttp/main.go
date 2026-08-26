@@ -14,8 +14,7 @@ type MessageRequest struct {
 }
 
 type MessageResponse struct {
-	Message  string `json:"message,omitempty"`
-	Received string `json:"received,omitempty"`
+	Message string `json:"message"`
 }
 
 func main() {
@@ -60,7 +59,7 @@ func handlePostMessage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	json.NewEncoder(w).Encode(MessageResponse{
-		Received: body.Message,
+		Message: fmt.Sprintf("Message received by GO NETHTTP backend: %q", body.Message),
 	})
 }
 
