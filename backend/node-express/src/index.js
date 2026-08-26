@@ -3,8 +3,8 @@ import cors from 'cors'
 import 'dotenv/config'
 
 const app = express()
-const PORT = process.env.PORT || 3000
-const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'http://localhost:5173'
+const PORT = process.env.PORT || 8080
+const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'http://localhost:3000'
 
 app.use(cors({
   origin: FRONTEND_ORIGIN,
