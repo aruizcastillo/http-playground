@@ -1,0 +1,32 @@
+{
+  "folders": [
+    {
+      "name": "http-playground",
+      "path": "."
+    },
+    {
+      "name": "frontend: vue",
+      "path": "frontend/vue"
+    },
+    {
+      "name": "frontend: angular",
+      "path": "frontend/angular"
+    },
+    {
+      "name": "backend: node-express",
+      "path": "backend/node-express"
+    },
+    {
+      "name": "backend: go-nethttp",
+      "path": "backend/go-nethttp"
+    },
+    {
+      "name": "backend: go-gin",
+      "path": "backend/go-gin"
+    },
+    {
+      "name": "backend: go-fiber",
+      "path": "backend/go-fiber"
+    }
+  ]
+}
